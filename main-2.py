@@ -25,3 +25,9 @@ def bubble_sort(li):
         li[j],li[j+1] = li[j+1],li[j]
   return li
 
+def shell_sort_david(li):
+  gap = len(li)//2
+  while gap>0:
+    a = 0
+    b = gap
+    
