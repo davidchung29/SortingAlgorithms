@@ -43,3 +43,12 @@ def shell_sort(li):
         c-=1
     gap //= 2
   print(li)
+
+  
+  def bogosort(li):
+    while (is_sorted(li)== False):
+        n = len(li)
+        for x in range (0,n):
+            r = random.randint(0,n-1)
+            li[x], li[r] = li[r], li[x]
+    print(li)
