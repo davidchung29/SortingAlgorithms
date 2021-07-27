@@ -52,3 +52,29 @@ def shell_sort(li):
             r = random.randint(0,n-1)
             li[x], li[r] = li[r], li[x]
     print(li)
+    
+  def mergesort_david(li): #O(NlogN) -> O(N)Space#
+    if len(li) > 1:
+      q = len(li)//2
+      a = li[q:]
+      b = li[:q]
+      mergesort_david(a)
+      mergesort_david(b)
+
+      x=y=z=0
+      while x<len(a) and y<len(b):
+        if a[x] < b[y]:
+          li[z] = a[x]
+          x+=1
+        else:
+          li[z] = b[y]
+          y+=1
+        z+=1
+      while x < len(a):
+        li[z] = a[x]
+        x+=1
+        z+=1
+      while y < len(b):
+        li[z] = b[y]
+        y+=1
+        z+=1
